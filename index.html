@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="nl-BE">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Bar & Beard is een rustige barbershop en bar voor mannen die een precies resultaat willen, op tijd en zonder stress."
+    />
+    <title>Bar & Beard | Barbershop & Bar</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="Hoofdnavigatie">
+      <a class="brand" href="#top" aria-label="Bar & Beard home">
+        <span class="mark" aria-hidden="true"><span></span></span>
+        <span>
+          <strong>Bar & Beard</strong>
+          <small>Barbershop & Bar</small>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Pagina secties">
+        <a href="#werkwijze">Werkwijze</a>
+        <a href="#diensten">Diensten</a>
+        <a href="#bar">Bar</a>
+        <a href="#afspraak">Afspraak</a>
+      </nav>
+      <a class="header-cta" href="#afspraak">Boek je moment</a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <picture>
+          <source srcset="assets/interior.png" media="(min-width: 760px)" />
+          <img src="assets/interior.png" alt="Warm interieur van Bar & Beard met bar en barberstoelen" />
+        </picture>
+        <div class="hero-scrim"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Antwerpen · Barbershop & Bar</p>
+          <h1 id="hero-title">Jouw stijl. Onze precisie. Zonder haast.</h1>
+          <p>
+            Toon wat je wil. Wij vertalen je referentie naar jouw haar, je baard en je dagplanning.
+            Op tijd, rustig en met aandacht voor het resultaat.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#afspraak">Plan een afspraak</a>
+            <a class="button ghost" href="#diensten">Bekijk prijzen</a>
+          </div>
+        </div>
+        <div class="hero-status" aria-label="Belangrijkste beloftes">
+          <span>Op tijd</span>
+          <span>Op referentie</span>
+          <span>Met barritueel</span>
+        </div>
+      </section>
+
+      <section class="promise strip" aria-label="Positionering">
+        <p>
+          Bar & Beard is een plek voor mannen die stijl belangrijk vinden, maar geen theater zoeken:
+          een goede coupe, een rustig hoofd en een resultaat dat klopt met wat je vroeg.
+        </p>
+      </section>
+
+      <section class="section two-col" id="werkwijze">
+        <div class="section-copy">
+          <p class="eyebrow">Hoe we werken</p>
+          <h2>Geen gok. Eerst begrijpen, dan knippen.</h2>
+          <p>
+            Voor de eerste beweging met de schaar bespreken we je referentie, haarstructuur,
+            lengte, fade en baardlijn. Zo blijft het resultaat persoonlijk zonder dat het
+            willekeurig wordt.
+          </p>
+          <div class="process-list">
+            <article>
+              <span>01</span>
+              <h3>Jij toont</h3>
+              <p>Foto, mood, vorige coupe of duidelijke richting. Alles begint met jouw beeld.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Wij vertalen</h3>
+              <p>We checken wat haalbaar is voor jouw haar en zeggen vooraf wat we aanpassen.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Het klopt</h3>
+              <p>Afwerking in detail: contour, textuur, baardlijn en styling zonder haast.</p>
+            </article>
+          </div>
+        </div>
+        <div class="image-stack">
+          <img src="assets/cut-process.jpg" alt="Barber werkt geconcentreerd aan een korte fade" />
+          <img src="assets/tools.png" alt="Barbertools op een warme mortex ondergrond" />
+        </div>
+      </section>
+
+      <section class="section service-section" id="diensten">
+        <div class="section-heading">
+          <p class="eyebrow">Diensten & prijzen</p>
+          <h2>Kies het moment dat bij je bezoek past.</h2>
+          <p>
+            Richtprijzen voor een duidelijke, volwassen menukaart. Het aanbod leidt vanzelf van
+            basis haircut naar combo en grooming, zonder goedkoop als argument te gebruiken.
+          </p>
+        </div>
+
+        <div class="service-layout">
+          <div class="service-tabs" role="tablist" aria-label="Dienst categorieën">
+            <button class="active" type="button" data-filter="all">Alles</button>
+            <button type="button" data-filter="hair">Haircut</button>
+            <button type="button" data-filter="beard">Baard</button>
+            <button type="button" data-filter="ritual">Ritueel</button>
+          </div>
+          <div class="service-grid" id="service-grid">
+            <article class="service-card" data-category="hair">
+              <div>
+                <p>Basis</p>
+                <h3>Herenkapsel</h3>
+              </div>
+              <span>35 euro</span>
+              <small>30-40 min · voor een nette, dagelijkse coupe</small>
+            </article>
+            <article class="service-card" data-category="hair">
+              <div>
+                <p>Snel</p>
+                <h3>Tondeuse / buzz cut</h3>
+              </div>
+              <span>25 euro</span>
+              <small>15-25 min · eenvoudig, strak en zonder omweg</small>
+            </article>
+            <article class="service-card" data-category="hair ritual">
+              <div>
+                <p>Precisie</p>
+                <h3>Skin fade / premium fade</h3>
+              </div>
+              <span>40 euro</span>
+              <small>40-50 min · meer tijd voor overgang en detail</small>
+            </article>
+            <article class="service-card featured" data-category="hair beard">
+              <div>
+                <p>Meest gekozen</p>
+                <h3>Herenkapsel + baard</h3>
+              </div>
+              <span>50 euro</span>
+              <small>50-60 min · de coupe en baardlijn in een keer juist</small>
+            </article>
+            <article class="service-card" data-category="beard">
+              <div>
+                <p>Onderhoud</p>
+                <h3>Baard trimmen</h3>
+              </div>
+              <span>20 euro</span>
+              <small>15-20 min · vorm, lengte en rust in je baard</small>
+            </article>
+            <article class="service-card" data-category="beard">
+              <div>
+                <p>Add-on</p>
+                <h3>Baard contour / line-up</h3>
+              </div>
+              <span>15 euro</span>
+              <small>10-15 min · scherpe lijn zonder volledige trim</small>
+            </article>
+            <article class="service-card" data-category="ritual beard">
+              <div>
+                <p>Ritueel</p>
+                <h3>Hot towel shave</h3>
+              </div>
+              <span>30 euro</span>
+              <small>25-35 min · warm, precies en rustig afgewerkt</small>
+            </article>
+            <article class="service-card" data-category="ritual">
+              <div>
+                <p>Volledig</p>
+                <h3>Grooming pakket</h3>
+              </div>
+              <span>75 euro</span>
+              <small>75-90 min · fade, baard, shave en styling</small>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="packages" aria-label="Aanbevolen pakketten">
+        <article>
+          <p>Sharp</p>
+          <h3>Herenkapsel + baard</h3>
+          <strong>50 euro</strong>
+          <span>Voor de meeste klanten de beste balans tussen tijd, vorm en afwerking.</span>
+        </article>
+        <article>
+          <p>Premium</p>
+          <h3>Skin fade + baard + hot towel</h3>
+          <strong>65 euro</strong>
+          <span>Voor wie verzorging wil zonder er een lang verhaal van te maken.</span>
+        </article>
+        <article>
+          <p>VIP Grooming</p>
+          <h3>Volledige verzorging + styling + wax</h3>
+          <strong>85 euro</strong>
+          <span>Voor events, shoots of dagen waarop het echt goed moet zitten.</span>
+        </article>
+      </section>
+
+      <section class="section bar-section" id="bar">
+        <div class="bar-image">
+          <img src="assets/bar-menu.png" alt="Cocktailkaart en espresso martini op de bar" />
+        </div>
+        <div class="section-copy">
+          <p class="eyebrow">De bar</p>
+          <h2>Goede coupe. Goed drankje. Geen haast.</h2>
+          <p>
+            De bar is geen gimmick. Het is het rustige einde van je bezoek: koffie, espresso
+            martini of een korte pauze aan de toog terwijl alles weer op zijn plaats valt.
+          </p>
+          <ul class="quiet-list">
+            <li>Koffie en alcoholvrije opties tijdens elk moment van de dag.</li>
+            <li>Cocktails na je afspraak of bij een langere grooming sessie.</li>
+            <li>Warm licht, mortex textuur, weinig ruis en genoeg ruimte.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section products">
+        <div class="section-heading">
+          <p class="eyebrow">Nazorg</p>
+          <h2>Wat we gebruiken, kan je meenemen.</h2>
+          <p>
+            Producten voor haar en baard blijven ingetogen: olie, balm, clay en shave cream met
+            eenvoudige uitleg over wat bij jouw coupe past.
+          </p>
+        </div>
+        <div class="product-gallery">
+          <img src="assets/products.png" alt="Bar & Beard verzorgingsproducten op de toonbank" />
+          <img src="assets/chair.png" alt="Barberstoel met Bar & Beard cape en handdoek" />
+          <img src="assets/bartender.jpg" alt="Barman werkt aan een cocktail achter de bar" />
+        </div>
+      </section>
+
+      <section class="booking" id="afspraak">
+        <div class="booking-copy">
+          <p class="eyebrow">Afspraak</p>
+          <h2>Plan je moment zonder gedoe.</h2>
+          <p>
+            Kies je dienst, geef aan of je een referentie meebrengt en kom op tijd binnen.
+            De rest houden wij rustig.
+          </p>
+        </div>
+        <form class="booking-form" aria-label="Afspraak formulier">
+          <label>
+            Dienst
+            <select id="service-select" name="service">
+              <option value="35|35">Herenkapsel · 35 euro · 35 min</option>
+              <option value="50|55" selected>Herenkapsel + baard · 50 euro · 55 min</option>
+              <option value="40|45">Skin fade / premium fade · 40 euro · 45 min</option>
+              <option value="65|75">Premium pakket · 65 euro · 75 min</option>
+              <option value="85|90">VIP Grooming · 85 euro · 90 min</option>
+            </select>
+          </label>
+          <label>
+            Voorkeursmoment
+            <input type="datetime-local" name="moment" />
+          </label>
+          <label class="check-row">
+            <input type="checkbox" name="reference" checked />
+            <span>Ik breng een referentiefoto mee</span>
+          </label>
+          <div class="booking-summary" aria-live="polite">
+            <span>Geschat</span>
+            <strong id="booking-total">50 euro · 55 min</strong>
+          </div>
+          <button type="button" class="button primary wide">Vraag afspraak aan</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="brand footer-brand">
+        <span class="mark" aria-hidden="true"><span></span></span>
+        <span>
+          <strong>Bar & Beard</strong>
+          <small>Barbershop & Bar</small>
+        </span>
+      </div>
+      <p>Op tijd. Op maat. Met aandacht.</p>
+      <a href="mailto:info@barbeard.com">info@barbeard.com</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
