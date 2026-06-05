@@ -249,17 +249,32 @@
           <label>
             Dienst
             <select id="service-select" name="service">
-              <option value="35|35">Herenkapsel · 35 euro · 35 min</option>
-              <option value="50|55" selected>Herenkapsel + baard · 50 euro · 55 min</option>
-              <option value="40|45">Skin fade / premium fade · 40 euro · 45 min</option>
-              <option value="65|75">Premium pakket · 65 euro · 75 min</option>
-              <option value="85|90">VIP Grooming · 85 euro · 90 min</option>
+              <option value="35|35">Herenkapsel · €35 · 35 min</option>
+              <option value="50|55" selected>Herenkapsel + baard · €50 · 55 min</option>
+              <option value="40|45">Skin fade · €40 · 45 min</option>
+              <option value="65|75">Premium pakket · €65 · 75 min</option>
+              <option value="85|90">VIP Grooming · €85 · 90 min</option>
             </select>
           </label>
-          <label>
-            Voorkeursmoment
-            <input type="datetime-local" name="moment" />
-          </label>
+          <fieldset class="booking-calendar">
+            <legend>Kies je datum</legend>
+            <div class="calendar-head" aria-hidden="true">
+              <span>Ma</span>
+              <span>Di</span>
+              <span>Wo</span>
+              <span>Do</span>
+              <span>Vr</span>
+              <span>Za</span>
+              <span>Zo</span>
+            </div>
+            <div class="calendar-grid" id="calendar-grid" role="group" aria-label="Beschikbare datums"></div>
+          </fieldset>
+          <fieldset class="time-picker">
+            <legend>Kies je uur</legend>
+            <div class="time-slots" id="time-slots" role="group" aria-label="Beschikbare uren"></div>
+          </fieldset>
+          <input type="hidden" id="booking-date" name="date" />
+          <input type="hidden" id="booking-time" name="time" />
           <label class="check-row">
             <input type="checkbox" name="reference" checked />
             <span>Ik breng een referentiefoto mee</span>
@@ -267,6 +282,7 @@
           <div class="booking-summary" aria-live="polite">
             <span>Geschat</span>
             <strong id="booking-total">50 euro · 55 min</strong>
+            <small id="booking-moment">Kies een datum en uur</small>
           </div>
           <button type="button" class="button primary wide">Vraag afspraak aan</button>
         </form>
