@@ -268,47 +268,75 @@
             De rest houden wij rustig.
           </p>
         </div>
-        <form class="booking-form" aria-label="Afspraak formulier">
-          <label>
-            Dienst
-            <select id="service-select" name="service">
-              <option value="35|35">Herenkapsel · €35 · 35 min</option>
-              <option value="50|55" selected>Herenkapsel + baard · €50 · 55 min</option>
-              <option value="40|45">Skin fade · €40 · 45 min</option>
-              <option value="65|75">Premium pakket · €65 · 75 min</option>
-              <option value="85|90">VIP Grooming · €85 · 90 min</option>
-            </select>
-          </label>
-          <fieldset class="booking-calendar">
-            <legend>Kies je datum</legend>
-            <div class="calendar-head" aria-hidden="true">
-              <span>Ma</span>
-              <span>Di</span>
-              <span>Wo</span>
-              <span>Do</span>
-              <span>Vr</span>
-              <span>Za</span>
-              <span>Zo</span>
-            </div>
-            <div class="calendar-grid" id="calendar-grid" role="group" aria-label="Beschikbare datums"></div>
-          </fieldset>
-          <fieldset class="time-picker">
-            <legend>Kies je uur</legend>
-            <div class="time-slots" id="time-slots" role="group" aria-label="Beschikbare uren"></div>
-          </fieldset>
-          <input type="hidden" id="booking-date" name="date" />
-          <input type="hidden" id="booking-time" name="time" />
-          <label class="check-row">
-            <input type="checkbox" name="reference" checked />
-            <span>Ik breng een referentiefoto mee</span>
-          </label>
+        <div class="booking-studio" aria-label="Online booking kalender">
+          <div class="booking-studio-head">
+            <span>Online booking</span>
+            <strong>Zelf je moment kiezen</strong>
+          </div>
+
+          <div class="booking-service" aria-label="Kies je dienst">
+            <button type="button" data-service="35|35" data-title="Herenkapsel">
+              <span>Herenkapsel</span>
+              <strong>€35</strong>
+              <small>35 min</small>
+            </button>
+            <button class="is-selected" type="button" data-service="50|55" data-title="Herenkapsel + baard">
+              <span>Herenkapsel + baard</span>
+              <strong>€50</strong>
+              <small>55 min</small>
+            </button>
+            <button type="button" data-service="40|45" data-title="Skin fade">
+              <span>Skin fade</span>
+              <strong>€40</strong>
+              <small>45 min</small>
+            </button>
+            <button type="button" data-service="65|75" data-title="Premium pakket">
+              <span>Premium pakket</span>
+              <strong>€65</strong>
+              <small>75 min</small>
+            </button>
+            <button type="button" data-service="85|90" data-title="VIP Grooming">
+              <span>VIP Grooming</span>
+              <strong>€85</strong>
+              <small>90 min</small>
+            </button>
+          </div>
+
+          <div class="booking-picker">
+            <section class="calendar-panel" aria-labelledby="calendar-title">
+              <div class="panel-title">
+                <span>01</span>
+                <h3 id="calendar-title">Kies je datum</h3>
+              </div>
+              <div class="calendar-head" aria-hidden="true">
+                <span>Ma</span>
+                <span>Di</span>
+                <span>Wo</span>
+                <span>Do</span>
+                <span>Vr</span>
+                <span>Za</span>
+                <span>Zo</span>
+              </div>
+              <div class="calendar-grid" id="calendar-grid" role="group" aria-label="Beschikbare datums"></div>
+            </section>
+
+            <section class="time-panel" aria-labelledby="time-title">
+              <div class="panel-title">
+                <span>02</span>
+                <h3 id="time-title">Kies je uur</h3>
+              </div>
+              <p>Beschikbare momenten voor de gekozen datum.</p>
+              <div class="time-slots" id="time-slots" role="group" aria-label="Beschikbare uren"></div>
+            </section>
+          </div>
+
           <div class="booking-summary" aria-live="polite">
-            <span>Geschat</span>
+            <span>Geselecteerd</span>
             <strong id="booking-total">50 euro · 55 min</strong>
             <small id="booking-moment">Kies een datum en uur</small>
+            <button type="button" class="button primary wide">Vraag afspraak aan</button>
           </div>
-          <button type="button" class="button primary wide">Vraag afspraak aan</button>
-        </form>
+        </div>
       </section>
     </main>
 
@@ -324,6 +352,6 @@
       <a href="mailto:info@barbeard.com">info@barbeard.com</a>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=booking-studio"></script>
   </body>
 </html>

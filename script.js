@@ -1,12 +1,10 @@
 const tabs = document.querySelectorAll(".service-tabs button");
 const cards = document.querySelectorAll(".service-card");
-const serviceSelect = document.querySelector("#service-select");
+const serviceButtons = document.querySelectorAll(".booking-service button");
 const bookingTotal = document.querySelector("#booking-total");
 const bookingMoment = document.querySelector("#booking-moment");
 const calendarGrid = document.querySelector("#calendar-grid");
 const timeSlots = document.querySelector("#time-slots");
-const bookingDate = document.querySelector("#booking-date");
-const bookingTime = document.querySelector("#booking-time");
 
 const dayLabels = ["Zo", "Ma", "Di", "Wo", "Do", "Vr", "Za"];
 const monthFormatter = new Intl.DateTimeFormat("nl-BE", { month: "short" });
@@ -31,6 +29,7 @@ const schedule = {
 
 let selectedDate = "";
 let selectedTime = "";
+let selectedService = "50|55";
 
 tabs.forEach((tab) => {
   tab.addEventListener("click", () => {
@@ -45,7 +44,7 @@ tabs.forEach((tab) => {
 });
 
 function updateBookingSummary() {
-  const [price, minutes] = serviceSelect.value.split("|");
+  const [price, minutes] = selectedService.split("|");
   bookingTotal.textContent = `${price} euro · ${minutes} min`;
 
   if (!selectedDate || !selectedTime) {
@@ -57,7 +56,16 @@ function updateBookingSummary() {
   bookingMoment.textContent = `${dateFormatter.format(date)} om ${selectedTime}`;
 }
 
-serviceSelect.addEventListener("change", updateBookingSummary);
+serviceButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    selectedService = button.dataset.service;
+    serviceButtons.forEach((item) => {
+      item.classList.toggle("is-selected", item === button);
+      item.setAttribute("aria-pressed", String(item === button));
+    });
+    updateBookingSummary();
+  });
+});
 
 function toIsoDate(date) {
   const year = date.getFullYear();
@@ -100,20 +108,16 @@ function renderTimeSlots(date) {
 
     button.addEventListener("click", () => {
       selectedTime = slot;
-      bookingTime.value = slot;
       renderTimeSlots(date);
       updateBookingSummary();
     });
 
     timeSlots.append(button);
   });
-
-  bookingTime.value = selectedTime;
 }
 
 function selectDate(date) {
   selectedDate = toIsoDate(date);
-  bookingDate.value = selectedDate;
   selectedTime = "";
   renderCalendar();
   renderTimeSlots(date);
@@ -157,9 +161,10 @@ function initBooking() {
   const firstDate = getBrusselsToday();
   firstDate.setHours(0, 0, 0, 0);
   selectedDate = toIsoDate(firstDate);
-  bookingDate.value = selectedDate;
   selectedTime = getSlotsForDate(firstDate)[0];
-  bookingTime.value = selectedTime;
+  serviceButtons.forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.classList.contains("is-selected")));
+  });
   renderCalendar();
   renderTimeSlots(firstDate);
   updateBookingSummary();

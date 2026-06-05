@@ -656,72 +656,141 @@ h3 {
   color: rgba(247, 241, 232, 0.72);
 }
 
-.booking-form {
+.booking-studio {
   display: grid;
   gap: 1rem;
-  padding: clamp(1rem, 3vw, 2rem);
-  background: rgba(247, 241, 232, 0.94);
+  padding: clamp(1rem, 2.4vw, 1.5rem);
+  background:
+    linear-gradient(180deg, rgba(247, 241, 232, 0.98), rgba(235, 225, 211, 0.96)),
+    #efe5d8;
   color: var(--ink);
   box-shadow: var(--shadow);
 }
 
-label {
-  display: grid;
-  gap: 0.5rem;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
+.booking-studio-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.booking-studio-head span,
+.panel-title span {
+  color: #8d6b40;
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
-select,
-input {
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 3.25rem;
-  border: 1px solid rgba(25, 21, 17, 0.22);
+.booking-studio-head strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  font-weight: 500;
+  line-height: 1.1;
+  text-align: right;
+}
+
+.booking-service {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  background: rgba(25, 21, 17, 0.16);
+  border: 1px solid rgba(25, 21, 17, 0.16);
+}
+
+.booking-service button {
+  min-height: 7.2rem;
+  display: grid;
+  align-content: space-between;
+  gap: 0.45rem;
+  padding: 0.85rem;
+  border: 0;
   border-radius: 0;
-  background: #fffaf2;
+  background: rgba(255, 250, 242, 0.82);
   color: var(--ink);
+  cursor: pointer;
   font: inherit;
-  font-size: 1rem;
-  letter-spacing: 0;
-  text-transform: none;
+  text-align: left;
 }
 
-select {
-  padding: 0 0.85rem;
+.booking-service button.is-selected {
+  background: #191511;
+  color: var(--cream);
 }
 
-input {
-  padding: 0 0.85rem;
+.booking-service span {
+  min-height: 2.6em;
+  font-size: 0.78rem;
+  font-weight: 850;
+  line-height: 1.3;
 }
 
-.check-row {
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  font-size: 0.86rem;
-  font-weight: 650;
-  letter-spacing: 0;
-  text-transform: none;
+.booking-service strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.45rem;
+  font-weight: 500;
 }
 
-.check-row input {
-  width: 1.2rem;
-  min-height: 1.2rem;
-  accent-color: #8d6b40;
+.booking-service small {
+  color: rgba(25, 21, 17, 0.58);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.booking-service button.is-selected small {
+  color: rgba(247, 241, 232, 0.7);
+}
+
+.booking-picker {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.85fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.calendar-panel,
+.time-panel {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid rgba(25, 21, 17, 0.14);
+  background: rgba(255, 250, 242, 0.58);
+}
+
+.panel-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.panel-title h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.time-panel > p {
+  margin: -0.35rem 0 1rem;
+  color: rgba(25, 21, 17, 0.62);
+  font-size: 0.92rem;
+  line-height: 1.5;
 }
 
 .booking-summary {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) auto;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
-  flex-wrap: wrap;
-  padding: 1rem 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  padding: 1rem;
+  border: 1px solid rgba(25, 21, 17, 0.14);
+  background: rgba(25, 21, 17, 0.06);
 }
 
 .booking-summary span {
@@ -732,16 +801,23 @@ input {
 }
 
 .booking-summary strong {
+  justify-self: end;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.35rem;
   font-weight: 400;
 }
 
 .booking-summary small {
-  flex: 0 0 100%;
+  grid-column: 1;
   color: rgba(25, 21, 17, 0.62);
   font-size: 0.95rem;
   line-height: 1.4;
+}
+
+.booking-summary .button {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  min-width: 13rem;
 }
 
 fieldset {
@@ -838,7 +914,7 @@ legend {
 
 .time-slots {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.5rem;
 }
 
@@ -876,6 +952,18 @@ legend {
 
   .service-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .booking-service {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .booking-picker {
+    grid-template-columns: 1fr;
+  }
+
+  .time-slots {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
@@ -972,6 +1060,18 @@ legend {
   .cut-gallery article:first-child {
     min-height: 380px;
   }
+
+  .booking-studio {
+    width: 100%;
+  }
+
+  .booking-service {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .booking-service button {
+    min-height: 6.4rem;
+  }
 }
 
 @media (max-width: 620px) {
@@ -994,24 +1094,56 @@ legend {
   }
 
   .booking-summary {
-    align-items: flex-start;
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 0.55rem;
     width: 100%;
   }
 
   .booking-summary strong {
+    justify-self: start;
     max-width: 100%;
     font-size: 1.2rem;
     line-height: 1.2;
   }
 
-  .booking-form {
-    overflow: hidden;
+  .booking-summary small,
+  .booking-summary .button {
+    grid-column: 1;
   }
 
-  select {
-    font-size: 0.92rem;
+  .booking-summary .button {
+    grid-row: auto;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .booking-studio-head {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .booking-studio-head strong {
+    text-align: left;
+  }
+
+  .booking-service {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-service button {
+    min-height: auto;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  .booking-service span {
+    min-height: 0;
+  }
+
+  .calendar-panel,
+  .time-panel {
+    padding: 0.75rem;
   }
 
   .calendar-head,
