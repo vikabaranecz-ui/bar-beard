@@ -170,3 +170,39 @@ function initBooking() {
 }
 
 initBooking();
+
+function initRevealMotion() {
+  const revealItems = document.querySelectorAll(
+    ".promise, .booking, .section, .packages, .contact-section",
+  );
+  const staggerItems = document.querySelectorAll(
+    ".works-grid, .service-grid, .packages, .product-gallery, .process-list",
+  );
+
+  revealItems.forEach((item) => item.classList.add("reveal"));
+  staggerItems.forEach((item) => item.classList.add("reveal-stagger"));
+
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+    );
+
+    [...revealItems, ...staggerItems].forEach((item) => revealObserver.observe(item));
+  } else {
+    [...revealItems, ...staggerItems].forEach((item) => item.classList.add("is-visible"));
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initRevealMotion, { once: true });
+} else {
+  initRevealMotion();
+}
