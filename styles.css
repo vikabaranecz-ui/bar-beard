@@ -20,7 +20,7 @@
 *,
 *::before,
 *::after {
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 html {
@@ -47,6 +47,7 @@ a {
 
 #werkwijze,
 #werken,
+#meer-werken,
 #diensten,
 #bar,
 #afspraak {
@@ -312,6 +313,12 @@ h3 {
   color: var(--cream);
 }
 
+.button.dark {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--cream);
+}
+
 .button.wide {
   width: 100%;
 }
@@ -455,10 +462,20 @@ h3 {
   background: #f0e7dc;
 }
 
+.more-works-section {
+  background: #e5d8c8;
+}
+
 .works-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
+}
+
+.works-preview .work-card,
+.works-preview .work-card.large {
+  grid-row: auto;
+  min-height: 520px;
 }
 
 .work-card {
@@ -528,6 +545,12 @@ h3 {
   height: clamp(320px, 36vw, 520px);
   object-fit: cover;
   box-shadow: 0 18px 54px rgba(44, 33, 24, 0.14);
+}
+
+.section-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.3rem;
 }
 
 .cut-gallery {
