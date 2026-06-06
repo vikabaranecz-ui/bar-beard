@@ -7,7 +7,6 @@ const calendarGrid = document.querySelector("#calendar-grid");
 const timeSlots = document.querySelector("#time-slots");
 
 const dayLabels = ["Zo", "Ma", "Di", "Wo", "Do", "Vr", "Za"];
-const monthFormatter = new Intl.DateTimeFormat("nl-BE", { month: "short" });
 const dateFormatter = new Intl.DateTimeFormat("nl-BE", {
   timeZone: "Europe/Brussels",
   weekday: "long",
@@ -146,7 +145,7 @@ function renderCalendar() {
     button.className = "date-button";
     button.setAttribute("aria-pressed", String(iso === selectedDate));
     button.setAttribute("aria-label", dateFormatter.format(date));
-    button.innerHTML = `<span>${dayLabels[date.getDay()]} · ${monthFormatter.format(date)}</span><strong>${date.getDate()}</strong>`;
+    button.innerHTML = `<span>${dayLabels[date.getDay()]}</span><strong>${date.getDate()}</strong>`;
 
     if (iso === selectedDate) {
       button.classList.add("is-selected");

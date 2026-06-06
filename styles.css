@@ -761,6 +761,7 @@ h3 {
 .booking-studio {
   display: grid;
   gap: 1rem;
+  min-width: 0;
   padding: clamp(1rem, 2.4vw, 1.5rem);
   background:
     linear-gradient(180deg, rgba(247, 241, 232, 0.98), rgba(235, 225, 211, 0.96)),
@@ -794,6 +795,7 @@ h3 {
   font-weight: 500;
   line-height: 1.1;
   text-align: right;
+  text-wrap: balance;
 }
 
 .booking-service {
@@ -806,6 +808,7 @@ h3 {
 
 .booking-service button {
   min-height: 7.2rem;
+  min-width: 0;
   display: grid;
   align-content: space-between;
   gap: 0.45rem;
@@ -829,6 +832,8 @@ h3 {
   font-size: 0.78rem;
   font-weight: 850;
   line-height: 1.3;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .booking-service strong {
@@ -878,6 +883,7 @@ h3 {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.35rem;
   font-weight: 500;
+  line-height: 1.15;
 }
 
 .time-panel > p {
@@ -944,6 +950,7 @@ legend {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 0.35rem;
+  min-width: 0;
 }
 
 .calendar-head {
@@ -958,6 +965,7 @@ legend {
 
 .date-button,
 .time-button {
+  min-width: 0;
   border: 1px solid rgba(25, 21, 17, 0.16);
   border-radius: 0;
   background: #fffaf2;
@@ -993,6 +1001,7 @@ legend {
   font-weight: 650;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .date-button.is-placeholder {
@@ -1027,6 +1036,7 @@ legend {
   padding: 0.65rem 0.45rem;
   font-weight: 550;
   letter-spacing: 0.04em;
+  white-space: nowrap;
 }
 
 .footer {
@@ -1288,5 +1298,68 @@ legend {
 
   .time-slots {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 430px) {
+  .booking {
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+  }
+
+  .booking-studio {
+    gap: 0.85rem;
+    padding: 0.8rem;
+  }
+
+  .booking-studio-head strong {
+    font-size: 1.2rem;
+  }
+
+  .panel-title {
+    gap: 0.65rem;
+  }
+
+  .panel-title h3 {
+    font-size: 1.15rem;
+  }
+
+  .calendar-panel,
+  .time-panel {
+    padding: 0.65rem;
+  }
+
+  .calendar-head,
+  .calendar-grid {
+    gap: 0.2rem;
+  }
+
+  .calendar-head {
+    font-size: 0.56rem;
+    letter-spacing: 0;
+  }
+
+  .date-button {
+    min-height: 3.15rem;
+    padding: 0.35rem 0.1rem;
+  }
+
+  .date-button strong {
+    font-size: 1rem;
+  }
+
+  .date-button span {
+    font-size: 0.5rem;
+    letter-spacing: 0;
+  }
+
+  .time-slots {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .time-button {
+    min-height: 2.65rem;
+    padding: 0.55rem 0.35rem;
+    letter-spacing: 0;
   }
 }
