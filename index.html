@@ -21,6 +21,7 @@
       </a>
       <nav class="nav-links" aria-label="Pagina secties">
         <a href="#werkwijze">Werkwijze</a>
+        <a href="#werken">Werken</a>
         <a href="#diensten">Diensten</a>
         <a href="#bar">Bar</a>
         <a href="#afspraak">Afspraak</a>
@@ -50,7 +51,7 @@
           </div>
           <div class="hero-actions">
             <a class="button primary" href="#afspraak">Boek je knipbeurt</a>
-            <a class="button ghost" href="#diensten">Bekijk diensten</a>
+            <a class="button ghost" href="#werken">Bekijk werken</a>
           </div>
         </div>
         <div class="hero-status" aria-label="Belangrijkste beloftes">
@@ -65,6 +66,86 @@
           Bar & Beard is in de eerste plaats een barbershop: haircuts, fades en baardwerk op
           referentie. De bar is de rustige extra, niet de hoofdzaak.
         </p>
+      </section>
+
+      <section class="booking" id="afspraak">
+        <div class="booking-copy">
+          <p class="eyebrow">Afspraak</p>
+          <h2>Reserveer je knipmoment.</h2>
+          <p>
+            Kies eerst je datum en uur. Daarna kies je de dienst die past bij je afspraak:
+            haircut, fade, baard of een volledig grooming moment.
+          </p>
+        </div>
+        <div class="booking-studio" aria-label="Online booking kalender">
+          <div class="booking-studio-head">
+            <span>Online booking</span>
+            <strong>Datum en uur bovenaan kiezen</strong>
+          </div>
+
+          <div class="booking-picker">
+            <section class="calendar-panel" aria-labelledby="calendar-title">
+              <div class="panel-title">
+                <span>01</span>
+                <h3 id="calendar-title">Kies je datum</h3>
+              </div>
+              <div class="calendar-head" aria-hidden="true">
+                <span>Ma</span>
+                <span>Di</span>
+                <span>Wo</span>
+                <span>Do</span>
+                <span>Vr</span>
+                <span>Za</span>
+                <span>Zo</span>
+              </div>
+              <div class="calendar-grid" id="calendar-grid" role="group" aria-label="Beschikbare datums"></div>
+            </section>
+
+            <section class="time-panel" aria-labelledby="time-title">
+              <div class="panel-title">
+                <span>02</span>
+                <h3 id="time-title">Kies je uur</h3>
+              </div>
+              <p>Beschikbare momenten voor de gekozen datum.</p>
+              <div class="time-slots" id="time-slots" role="group" aria-label="Beschikbare uren"></div>
+            </section>
+          </div>
+
+          <div class="booking-service" aria-label="Kies je dienst">
+            <button type="button" data-service="35|35" data-title="Herenkapsel">
+              <span>Herenkapsel</span>
+              <strong>€35</strong>
+              <small>35 min</small>
+            </button>
+            <button class="is-selected" type="button" data-service="50|55" data-title="Herenkapsel + baard">
+              <span>Herenkapsel + baard</span>
+              <strong>€50</strong>
+              <small>55 min</small>
+            </button>
+            <button type="button" data-service="40|45" data-title="Skin fade">
+              <span>Skin fade</span>
+              <strong>€40</strong>
+              <small>45 min</small>
+            </button>
+            <button type="button" data-service="65|75" data-title="Premium pakket">
+              <span>Premium pakket</span>
+              <strong>€65</strong>
+              <small>75 min</small>
+            </button>
+            <button type="button" data-service="85|90" data-title="VIP Grooming">
+              <span>VIP Grooming</span>
+              <strong>€85</strong>
+              <small>90 min</small>
+            </button>
+          </div>
+
+          <div class="booking-summary" aria-live="polite">
+            <span>Geselecteerd</span>
+            <strong id="booking-total">50 euro · 55 min</strong>
+            <small id="booking-moment">Kies een datum en uur</small>
+            <button type="button" class="button primary wide">Vraag afspraak aan</button>
+          </div>
+        </div>
       </section>
 
       <section class="section two-col" id="werkwijze">
@@ -97,6 +178,66 @@
         <div class="image-stack">
           <img src="assets/cut-process.jpg" alt="Barber werkt geconcentreerd aan een korte fade" />
           <img src="assets/tools.png" alt="Barbertools op een warme mortex ondergrond" />
+        </div>
+      </section>
+
+      <section class="section works-section" id="werken">
+        <div class="section-heading">
+          <p class="eyebrow">Galerij van werken</p>
+          <h2>Voor en na. Zodat je ziet wat we bedoelen met precies.</h2>
+          <p>
+            Geen losse sfeerbeelden, maar echte richtingen: korte fades, natuurlijke textuur,
+            strakke baardlijnen en coupes die op referentie worden vertaald.
+          </p>
+        </div>
+        <div class="works-grid" aria-label="Voor en na voorbeelden van Bar & Beard">
+          <article class="work-card large">
+            <img src="assets/work-before-after-01.png" alt="Voor en na: natuurlijke coupe naar strakke fade met baard" />
+            <div>
+              <p>Voor / na</p>
+              <h3>Classic fade met baardvorm</h3>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="assets/work-before-after-02.png" alt="Voor en na: krullend haar met kortere zijkanten" />
+            <div>
+              <p>Textuur</p>
+              <h3>Krul bovenaan, zijkant rustig</h3>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="assets/work-before-after-03.png" alt="Voor en na: korte textured haircut met baardlijn" />
+            <div>
+              <p>Short crop</p>
+              <h3>Korter, scherper, nog natuurlijk</h3>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="assets/work-before-after-04.png" alt="Voor en na: fade met volle krul bovenaan" />
+            <div>
+              <p>Low fade</p>
+              <h3>Volume behouden, contour schoon</h3>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="assets/work-before-after-05.png" alt="Voor en na: medium lengte naar nette flow haircut" />
+            <div>
+              <p>Flow cut</p>
+              <h3>Lengte houden, vorm terugbrengen</h3>
+            </div>
+          </article>
+          <article class="work-card">
+            <img src="assets/work-before-after-06.png" alt="Voor en na: korte fade met strakke haarlijn" />
+            <div>
+              <p>Clean fade</p>
+              <h3>Strakke zijkant, zachte overgang</h3>
+            </div>
+          </article>
+        </div>
+        <div class="studio-gallery" aria-label="Sfeer en detail van Bar & Beard">
+          <img src="assets/reference-consult.png" alt="Barber bespreekt referentie met klant in de stoel" />
+          <img src="assets/brand-tools-flatlay.png" alt="Bar & Beard tools en verzorgingsproducten op de toonbank" />
+          <img src="assets/shop-entrance.png" alt="Ingang van Bar & Beard met zicht op barbershop en bar" />
         </div>
       </section>
 
@@ -265,85 +406,6 @@
         </div>
       </section>
 
-      <section class="booking" id="afspraak">
-        <div class="booking-copy">
-          <p class="eyebrow">Afspraak</p>
-          <h2>Plan je moment zonder gedoe.</h2>
-          <p>
-            Kies je dienst, geef aan of je een referentie meebrengt en kom op tijd binnen.
-            De rest houden wij rustig.
-          </p>
-        </div>
-        <div class="booking-studio" aria-label="Online booking kalender">
-          <div class="booking-studio-head">
-            <span>Online booking</span>
-            <strong>Zelf je moment kiezen</strong>
-          </div>
-
-          <div class="booking-service" aria-label="Kies je dienst">
-            <button type="button" data-service="35|35" data-title="Herenkapsel">
-              <span>Herenkapsel</span>
-              <strong>€35</strong>
-              <small>35 min</small>
-            </button>
-            <button class="is-selected" type="button" data-service="50|55" data-title="Herenkapsel + baard">
-              <span>Herenkapsel + baard</span>
-              <strong>€50</strong>
-              <small>55 min</small>
-            </button>
-            <button type="button" data-service="40|45" data-title="Skin fade">
-              <span>Skin fade</span>
-              <strong>€40</strong>
-              <small>45 min</small>
-            </button>
-            <button type="button" data-service="65|75" data-title="Premium pakket">
-              <span>Premium pakket</span>
-              <strong>€65</strong>
-              <small>75 min</small>
-            </button>
-            <button type="button" data-service="85|90" data-title="VIP Grooming">
-              <span>VIP Grooming</span>
-              <strong>€85</strong>
-              <small>90 min</small>
-            </button>
-          </div>
-
-          <div class="booking-picker">
-            <section class="calendar-panel" aria-labelledby="calendar-title">
-              <div class="panel-title">
-                <span>01</span>
-                <h3 id="calendar-title">Kies je datum</h3>
-              </div>
-              <div class="calendar-head" aria-hidden="true">
-                <span>Ma</span>
-                <span>Di</span>
-                <span>Wo</span>
-                <span>Do</span>
-                <span>Vr</span>
-                <span>Za</span>
-                <span>Zo</span>
-              </div>
-              <div class="calendar-grid" id="calendar-grid" role="group" aria-label="Beschikbare datums"></div>
-            </section>
-
-            <section class="time-panel" aria-labelledby="time-title">
-              <div class="panel-title">
-                <span>02</span>
-                <h3 id="time-title">Kies je uur</h3>
-              </div>
-              <p>Beschikbare momenten voor de gekozen datum.</p>
-              <div class="time-slots" id="time-slots" role="group" aria-label="Beschikbare uren"></div>
-            </section>
-          </div>
-
-          <div class="booking-summary" aria-live="polite">
-            <span>Geselecteerd</span>
-            <strong id="booking-total">50 euro · 55 min</strong>
-            <small id="booking-moment">Kies een datum en uur</small>
-            <button type="button" class="button primary wide">Vraag afspraak aan</button>
-          </div>
-        </div>
-      </section>
     </main>
 
     <footer class="footer">
