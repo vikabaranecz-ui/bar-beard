@@ -8,7 +8,7 @@
       content="Bar & Beard is een rustige barbershop en bar voor mannen die een precies resultaat willen, op tijd en zonder stress."
     />
     <title>Bar & Beard | Barbershop voor haircuts, fades en baard</title>
-    <link rel="stylesheet" href="styles.css?v=clean-hero" />
+    <link rel="stylesheet" href="styles.css?v=booking-confirmation" />
   </head>
   <body>
     <header class="site-header" aria-label="Hoofdnavigatie">
@@ -136,10 +136,40 @@
             <span>Geselecteerd</span>
             <strong id="booking-total">50 euro · 55 min</strong>
             <small id="booking-moment">Kies een datum en uur</small>
-            <button type="button" class="button primary wide">Vraag afspraak aan</button>
+            <button type="button" class="button primary wide" id="booking-confirm-trigger">Vraag afspraak aan</button>
           </div>
         </div>
       </section>
+
+      <div class="booking-confirmation" id="booking-confirmation" role="dialog" aria-modal="true" aria-labelledby="confirmation-title" hidden>
+        <div class="confirmation-panel">
+          <button class="confirmation-close" type="button" aria-label="Sluit bevestiging">×</button>
+          <p class="eyebrow">Aanvraag ontvangen</p>
+          <h2 id="confirmation-title">Uw afspraak staat klaar.</h2>
+          <p>
+            We hebben uw gekozen moment genoteerd. Neem contact op als u nog een referentie of
+            extra vraag wil doorgeven.
+          </p>
+          <dl class="confirmation-details">
+            <div>
+              <dt>Dienst</dt>
+              <dd id="confirmation-service">Herenkapsel + baard</dd>
+            </div>
+            <div>
+              <dt>Moment</dt>
+              <dd id="confirmation-moment">Kies een datum en uur</dd>
+            </div>
+            <div>
+              <dt>Prijs & duur</dt>
+              <dd id="confirmation-total">50 euro · 55 min</dd>
+            </div>
+          </dl>
+          <div class="confirmation-actions">
+            <a class="button primary" href="tel:+905012345678">Bel ons</a>
+            <a class="button dark-soft" href="mailto:info@barbeard.com">Mail referentie</a>
+          </div>
+        </div>
+      </div>
 
       <section class="section two-col" id="werkwijze">
         <div class="section-copy">
@@ -378,6 +408,6 @@
       <a href="mailto:info@barbeard.com">info@barbeard.com</a>
     </footer>
 
-    <script src="script.js?v=clean-hero"></script>
+    <script src="script.js?v=booking-confirmation"></script>
   </body>
 </html>

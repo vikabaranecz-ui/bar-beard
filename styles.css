@@ -36,6 +36,10 @@ body {
   color: var(--ink);
 }
 
+body.has-confirmation-open {
+  overflow: hidden;
+}
+
 body::selection {
   background: #d3a66f;
   color: #191511;
@@ -333,6 +337,12 @@ h3 {
 
 .button.ghost {
   border-color: rgba(247, 241, 232, 0.36);
+  color: var(--cream);
+}
+
+.button.dark-soft {
+  border-color: rgba(25, 21, 17, 0.18);
+  background: #241d17;
   color: var(--cream);
 }
 
@@ -1021,6 +1031,91 @@ h3 {
   min-width: 13rem;
 }
 
+.booking-confirmation {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(18, 13, 10, 0.72);
+  backdrop-filter: blur(16px);
+}
+
+.booking-confirmation[hidden] {
+  display: none;
+}
+
+.confirmation-panel {
+  position: relative;
+  width: min(560px, 100%);
+  padding: clamp(1.2rem, 4vw, 2rem);
+  border: 1px solid rgba(247, 241, 232, 0.18);
+  background:
+    linear-gradient(180deg, rgba(247, 241, 232, 0.98), rgba(232, 221, 207, 0.98)),
+    #efe5d8;
+  color: var(--ink);
+  box-shadow: 0 28px 90px rgba(8, 6, 5, 0.38);
+  animation: confirmationIn 360ms var(--ease-luxury) both;
+}
+
+.confirmation-panel > p:not(.eyebrow) {
+  color: rgba(25, 21, 17, 0.68);
+  line-height: 1.65;
+}
+
+.confirmation-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2.35rem;
+  height: 2.35rem;
+  border: 1px solid rgba(25, 21, 17, 0.16);
+  background: rgba(255, 250, 242, 0.7);
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.confirmation-details {
+  display: grid;
+  gap: 1px;
+  margin: 1.4rem 0;
+  background: rgba(25, 21, 17, 0.14);
+  border: 1px solid rgba(25, 21, 17, 0.14);
+}
+
+.confirmation-details div {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 1rem;
+  padding: 0.95rem;
+  background: rgba(255, 250, 242, 0.78);
+}
+
+.confirmation-details dt {
+  color: rgba(25, 21, 17, 0.54);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.confirmation-details dd {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.08rem;
+  line-height: 1.35;
+}
+
+.confirmation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
 fieldset {
   min-width: 0;
   margin: 0;
@@ -1367,6 +1462,16 @@ legend {
     width: 100%;
   }
 
+  .confirmation-details div {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .confirmation-actions,
+  .confirmation-actions .button {
+    width: 100%;
+  }
+
   .booking-studio-head {
     align-items: start;
     flex-direction: column;
@@ -1486,6 +1591,17 @@ legend {
   from {
     opacity: 0;
     transform: translateY(1.8rem) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes confirmationIn {
+  from {
+    opacity: 0;
+    transform: translateY(1rem) scale(0.985);
   }
   to {
     opacity: 1;

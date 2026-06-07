@@ -5,6 +5,12 @@ const bookingTotal = document.querySelector("#booking-total");
 const bookingMoment = document.querySelector("#booking-moment");
 const calendarGrid = document.querySelector("#calendar-grid");
 const timeSlots = document.querySelector("#time-slots");
+const bookingConfirmTrigger = document.querySelector("#booking-confirm-trigger");
+const bookingConfirmation = document.querySelector("#booking-confirmation");
+const confirmationClose = document.querySelector(".confirmation-close");
+const confirmationService = document.querySelector("#confirmation-service");
+const confirmationMoment = document.querySelector("#confirmation-moment");
+const confirmationTotal = document.querySelector("#confirmation-total");
 
 const dayLabels = ["Zo", "Ma", "Di", "Wo", "Do", "Vr", "Za"];
 const dateFormatter = new Intl.DateTimeFormat("nl-BE", {
@@ -29,6 +35,7 @@ const schedule = {
 let selectedDate = "";
 let selectedTime = "";
 let selectedService = "50|55";
+let selectedServiceTitle = "Herenkapsel + baard";
 
 tabs.forEach((tab) => {
   tab.addEventListener("click", () => {
@@ -58,6 +65,7 @@ function updateBookingSummary() {
 serviceButtons.forEach((button) => {
   button.addEventListener("click", () => {
     selectedService = button.dataset.service;
+    selectedServiceTitle = button.dataset.title;
     serviceButtons.forEach((item) => {
       item.classList.toggle("is-selected", item === button);
       item.setAttribute("aria-pressed", String(item === button));
@@ -170,6 +178,34 @@ function initBooking() {
 }
 
 initBooking();
+
+function openBookingConfirmation() {
+  confirmationService.textContent = selectedServiceTitle;
+  confirmationMoment.textContent = bookingMoment.textContent;
+  confirmationTotal.textContent = bookingTotal.textContent;
+  bookingConfirmation.hidden = false;
+  document.body.classList.add("has-confirmation-open");
+  confirmationClose.focus();
+}
+
+function closeBookingConfirmation() {
+  bookingConfirmation.hidden = true;
+  document.body.classList.remove("has-confirmation-open");
+  bookingConfirmTrigger.focus();
+}
+
+bookingConfirmTrigger.addEventListener("click", openBookingConfirmation);
+confirmationClose.addEventListener("click", closeBookingConfirmation);
+bookingConfirmation.addEventListener("click", (event) => {
+  if (event.target === bookingConfirmation) {
+    closeBookingConfirmation();
+  }
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !bookingConfirmation.hidden) {
+    closeBookingConfirmation();
+  }
+});
 
 function initRevealMotion() {
   const revealItems = document.querySelectorAll(
