@@ -214,7 +214,7 @@ function initRevealMotion() {
     ".promise, .booking, .section, .packages, .contact-section",
   );
   const staggerItems = document.querySelectorAll(
-    ".works-grid, .service-grid, .packages, .product-gallery, .process-list",
+    ".works-grid, .service-grid, .packages, .product-gallery",
   );
 
   revealItems.forEach((item) => item.classList.add("reveal"));

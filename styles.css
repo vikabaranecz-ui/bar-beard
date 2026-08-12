@@ -55,7 +55,6 @@ a {
   text-decoration: none;
 }
 
-#werkwijze,
 #werken,
 #diensten,
 #bar,
@@ -514,80 +513,10 @@ h3 {
   line-height: 1.75;
 }
 
-.process-list {
-  display: grid;
-  gap: 0.75rem;
-  margin-top: 2rem;
-}
-
-.process-list article {
-  display: grid;
-  grid-template-columns: 3rem 1fr;
-  gap: 1rem;
-  padding: 1rem 0;
-  border-top: 1px solid var(--line);
-  transition:
-    transform 280ms var(--ease-luxury),
-    border-color 280ms ease;
-}
-
-.process-list article:hover {
-  border-color: rgba(141, 107, 64, 0.38);
-  transform: translateX(0.35rem);
-}
-
-.process-list span {
-  grid-row: 1 / span 2;
-  color: #8d6b40;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.4rem;
-}
-
-.process-list h3,
-.process-list p {
-  grid-column: 2;
-}
-
-.process-list p,
 .quiet-list {
   margin: 0;
   color: rgba(25, 21, 17, 0.68);
   line-height: 1.6;
-}
-
-.image-stack {
-  position: relative;
-  min-height: 680px;
-}
-
-.image-stack img {
-  position: absolute;
-  object-fit: cover;
-  box-shadow: var(--shadow);
-  transition: transform 900ms var(--ease-luxury);
-}
-
-.image-stack:hover img:first-child {
-  transform: translateY(-0.5rem);
-}
-
-.image-stack:hover img:last-child {
-  transform: translateY(0.45rem);
-}
-
-.image-stack img:first-child {
-  top: 0;
-  right: 0;
-  width: 68%;
-  height: 78%;
-}
-
-.image-stack img:last-child {
-  left: 0;
-  bottom: 0;
-  width: 55%;
-  height: 48%;
-  border: 0.75rem solid #efe5d8;
 }
 
 .section-heading {
@@ -1460,25 +1389,6 @@ legend {
   .booking,
   .contact-section {
     grid-template-columns: 1fr;
-  }
-
-  .image-stack {
-    min-height: auto;
-    display: grid;
-    grid-template-columns: 1fr 0.7fr;
-    gap: 0.75rem;
-  }
-
-  .image-stack img {
-    position: static;
-    width: 100% !important;
-    height: 420px !important;
-  }
-
-  .image-stack img:last-child {
-    align-self: end;
-    height: 300px !important;
-    border-width: 0.4rem;
   }
 
   .packages,
