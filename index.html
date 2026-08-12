@@ -8,7 +8,7 @@
       content="Bar & Beard is een rustige barbershop en bar voor mannen die een precies resultaat willen, op tijd en zonder stress."
     />
     <title>Bar & Beard | Barbershop voor haircuts, fades en baard</title>
-    <link rel="stylesheet" href="styles.css?v=booking-confirmation" />
+    <link rel="stylesheet" href="styles.css?v=mobile-menu" />
   </head>
   <body>
     <header class="site-header" aria-label="Hoofdnavigatie">
@@ -27,6 +27,19 @@
         <a href="#contact">Contact</a>
       </nav>
       <a class="header-cta" href="#afspraak">Boek je moment</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+        <span>Menu</span>
+        <span aria-hidden="true"></span>
+      </button>
+      <nav class="mobile-menu" id="mobile-menu" aria-label="Mobiel menu" hidden>
+        <a href="#top">Home</a>
+        <a href="#afspraak">Afspraak</a>
+        <a href="#diensten">Diensten</a>
+        <a href="#werken">Werken</a>
+        <a href="#werkwijze">Werkwijze</a>
+        <a href="#bar">Bar</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
 
     <main id="top">
@@ -408,6 +421,6 @@
       <a href="mailto:info@barbeard.com">info@barbeard.com</a>
     </footer>
 
-    <script src="script.js?v=booking-confirmation"></script>
+    <script src="script.js?v=mobile-menu"></script>
   </body>
 </html>

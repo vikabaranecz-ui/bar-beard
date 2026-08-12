@@ -11,6 +11,8 @@ const confirmationClose = document.querySelector(".confirmation-close");
 const confirmationService = document.querySelector("#confirmation-service");
 const confirmationMoment = document.querySelector("#confirmation-moment");
 const confirmationTotal = document.querySelector("#confirmation-total");
+const menuToggle = document.querySelector(".menu-toggle");
+const mobileMenu = document.querySelector("#mobile-menu");
 
 const dayLabels = ["Zo", "Ma", "Di", "Wo", "Do", "Vr", "Za"];
 const dateFormatter = new Intl.DateTimeFormat("nl-BE", {
@@ -242,3 +244,30 @@ if (document.readyState === "loading") {
 } else {
   initRevealMotion();
 }
+
+function closeMobileMenu() {
+  mobileMenu.hidden = true;
+  menuToggle.setAttribute("aria-expanded", "false");
+}
+
+function toggleMobileMenu() {
+  const willOpen = mobileMenu.hidden;
+  mobileMenu.hidden = !willOpen;
+  menuToggle.setAttribute("aria-expanded", String(willOpen));
+}
+
+menuToggle.addEventListener("click", toggleMobileMenu);
+mobileMenu.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", closeMobileMenu);
+});
+document.addEventListener("click", (event) => {
+  if (!mobileMenu.hidden && !event.target.closest(".site-header")) {
+    closeMobileMenu();
+  }
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !mobileMenu.hidden) {
+    closeMobileMenu();
+    menuToggle.focus();
+  }
+});

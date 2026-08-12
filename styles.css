@@ -186,6 +186,98 @@ a {
   text-transform: uppercase;
 }
 
+.menu-toggle,
+.mobile-menu {
+  display: none;
+}
+
+.menu-toggle {
+  justify-self: end;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 2.75rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid rgba(247, 241, 232, 0.28);
+  background: rgba(22, 18, 15, 0.28);
+  color: var(--cream);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.menu-toggle span[aria-hidden="true"] {
+  position: relative;
+  width: 1.15rem;
+  height: 1px;
+  background: currentColor;
+}
+
+.menu-toggle span[aria-hidden="true"]::before,
+.menu-toggle span[aria-hidden="true"]::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 1.15rem;
+  height: 1px;
+  background: currentColor;
+  transition:
+    transform 180ms var(--ease-luxury),
+    top 180ms var(--ease-luxury);
+}
+
+.menu-toggle span[aria-hidden="true"]::before {
+  top: -0.35rem;
+}
+
+.menu-toggle span[aria-hidden="true"]::after {
+  top: 0.35rem;
+}
+
+.menu-toggle[aria-expanded="true"] span[aria-hidden="true"] {
+  background: transparent;
+}
+
+.menu-toggle[aria-expanded="true"] span[aria-hidden="true"]::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span[aria-hidden="true"]::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.mobile-menu {
+  grid-column: 1 / -1;
+  gap: 1px;
+  padding-top: 0.85rem;
+  background: rgba(247, 241, 232, 0.14);
+  border-top: 1px solid rgba(247, 241, 232, 0.14);
+}
+
+.mobile-menu:not([hidden]) {
+  display: grid;
+  animation: mobileMenuIn 220ms var(--ease-luxury) both;
+}
+
+.mobile-menu a {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.95rem 0;
+  color: rgba(247, 241, 232, 0.86);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.mobile-menu a::after {
+  content: "→";
+  color: #d3a66f;
+}
+
 .hero {
   position: relative;
   min-height: 92svh;
@@ -1290,6 +1382,10 @@ legend {
     display: none;
   }
 
+  .menu-toggle {
+    display: inline-flex;
+  }
+
   .service-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1606,6 +1702,17 @@ legend {
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes mobileMenuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-0.45rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
